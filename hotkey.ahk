@@ -1,4 +1,4 @@
-;[]; ~키를 del키로
+;l키로
 `::del
 Return
 
@@ -51,3 +51,18 @@ RWin & Left::SendInput {Home}
 
 ;ctrl + esc = ctrl + `
 ^esc::^`
+
+; caps lock 안씀
+CapsLock::SendInput {}
+Return
+
+; F1::
+;     getMyVar()
+;     if(%myVar%=0):
+;         k::SendInput {Home}
+;         myVar:=1
+;         else:
+;             Home::SendInput {k}
+;             myVar:=0
+;         Return
+

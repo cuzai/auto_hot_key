@@ -18,7 +18,7 @@ return
 ; Return
 
 ; crtl + space = 한자
-^Space::Send {VK19SC1F1}{Tab}
+^Space::Send {VK19SC1F1}
 Return
 
 ; Control + Space = 영어

@@ -1,5 +1,4 @@
-;l키로
-`::del
+﻿`::del
 Return
 
 ; shift + esc 키를 ~키로
@@ -27,7 +26,7 @@ RWin::MouseClick, Right
 Return
 
 ; F번호들
-#1::SendInput {F1}
+;#1::SendInput {F1}
 #2::SendInput {F2}
 #3::SendInput {F3}
 #4::SendInput {F4}
@@ -45,9 +44,9 @@ Return
 !4::SendInput !{F4}
 Return
 
-;RShift + arrow = home/end
-RWin & Right::SendInput {End}
-RWin & Left::SendInput {Home}
+; ctrl + arrow = block
+^Right::SendInput +{End}
+^Left::SendInput +{Home}
 
 ;ctrl + esc = ctrl + `
 ^esc::^`

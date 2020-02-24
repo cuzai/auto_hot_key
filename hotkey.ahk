@@ -1,15 +1,18 @@
 ﻿`::del
 Return
 
+NumpadEnter::
+return
+
 ; shift + esc 키를 ~키로
 +esc::SendInput {~}
 return
 
-;$Alt = 한자
+; $Alt = 한자
 ; LAlt::
 ;     ; SendInput {VK19SC1F1}
 ;     KeyWait, LAlt
-;     ; MsgBox %A_priorkey%
+;     MsgBox %A_priorkey%
 ;     if (A_priorkey="LAlt") {
 ;         SendInput {VK19SC1F1}
 ;     } else {

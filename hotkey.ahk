@@ -1,12 +1,20 @@
-﻿^+::SendInput {}
+﻿; h:: ; KeyHistory 실행 단축키 : h
+
+; KeyHistory
+
+; return
+
+; esc::exitapp ; 종료 : esc
+
+^+::SendInput {}
 
 !Space::Winset, Alwaysontop, , A
 
 `::del
 Return
 
-NumpadEnter::
-return
+; NumpadEnter::
+; return
 
 ; shift + esc 키를 ~키로
 +esc::SendInput {~}
@@ -17,16 +25,28 @@ return
 ;     ; SendInput {VK19SC1F1}
 ;     KeyWait, LAlt
 ;     MsgBox %A_priorkey%
-;     if (A_priorkey="LAlt") {
-;         SendInput {VK19SC1F1}
-;     } else {
-;         SendInput !%A_priorkey%
-;     }
-; Return
+; if (A_priorkey="LAlt") {
+;     SendInput {VK19SC1F1}
+; } else {
+;     SendInput !%A_priorkey%
+; }
+Return
 
 ; crtl + space = 한자
-^Space::Send {VK19SC1F1}{Tab}
+; ^Space::Send {VK19SC1F1}{Tab}
+; Return
+; Tab & Space::Send {VK19SC1F1}{Tab}
+; Return
+; LShift & Space::Send {VK19SC1F1}{Tab}
+; Return
+
+; Tab::SendInput {Tab}
+; return
+
+RShift & LAlt::Send {VK19SC1F1}
 Return
+LAlt & RShift::Send {VK19SC1F1}
+return
 
 ; Control + Space = 영어
 ;^Space::SendInput {vk15sc138}

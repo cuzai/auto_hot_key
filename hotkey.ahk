@@ -1,4 +1,8 @@
-﻿`::del
+﻿^+::SendInput {}
+
+!Space::Winset, Alwaysontop, , A
+
+`::del
 Return
 
 NumpadEnter::

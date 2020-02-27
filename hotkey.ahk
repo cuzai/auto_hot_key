@@ -41,12 +41,12 @@ Esc::
         Esc & vkba::SendInput {5}
     } else if (A_priorkey="'") {
         Esc & '::SendInput {6}
+    }else if (A_priorkey="o") {
+        Esc & o::SendInput {7}
     }else if (A_priorkey="p") {
-        Esc & p::SendInput {7}
+        Esc & p::SendInput {8}
     }else if (A_priorkey="[") {
-        Esc & [::SendInput {8}
-    }else if (A_priorkey="]") {
-        Esc & ]::SendInput {9}
+        Esc & [::SendInput {9}
     }
 Return
 

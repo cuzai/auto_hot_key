@@ -21,15 +21,33 @@ Return
 return
 
 ; $Alt = 한자
-; LAlt::
-;     ; SendInput {VK19SC1F1}
-;     KeyWait, LAlt
-;     MsgBox %A_priorkey%
-; if (A_priorkey="LAlt") {
-;     SendInput {VK19SC1F1}
-; } else {
-;     SendInput !%A_priorkey%
-; }
+Esc::
+    ; SendInput {VK19SC1F1}
+    KeyWait, Esc
+    ;MsgBox %A_priorkey%
+    if (A_priorkey="Escape") {
+        SendInput {Esc}
+    } else if (A_priorkey=",") {
+        Esc & ,::SendInput {1}
+    } else if (A_priorkey="vk15") {
+        Esc & vk15::SendInput {0}
+    } else if (A_priorkey=".") {
+        Esc & .::SendInput {2}
+    } else if (A_priorkey="/") {
+        Esc & /::SendInput {3}
+    } else if (A_priorkey="l") {
+        Esc & l::SendInput {4}
+    } else if (A_priorkey=";") {
+        Esc & vkba::SendInput {5}
+    } else if (A_priorkey="'") {
+        Esc & '::SendInput {6}
+    }else if (A_priorkey="p") {
+        Esc & p::SendInput {7}
+    }else if (A_priorkey="[") {
+        Esc & [::SendInput {8}
+    }else if (A_priorkey="]") {
+        Esc & ]::SendInput {9}
+    }
 Return
 
 ; crtl + space = 한자

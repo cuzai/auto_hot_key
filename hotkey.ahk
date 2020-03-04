@@ -10,6 +10,8 @@
 
 !Space::Winset, Alwaysontop, , A
 
+Esc & RWin::SendInput {.}
+
 `::del
 Return
 
@@ -27,7 +29,7 @@ Esc::
     ;MsgBox %A_priorkey%
     if (A_priorkey="Escape") {
         SendInput {Esc}
-    } else if (A_priorkey=",") {
+    } else if (A_priorkey=", ") {
         Esc & ,::SendInput {1}
     } else if (A_priorkey="vk15") {
         Esc & vk15::SendInput {0}
@@ -41,11 +43,11 @@ Esc::
         Esc & vkba::SendInput {5}
     } else if (A_priorkey="'") {
         Esc & '::SendInput {6}
-    }else if (A_priorkey="o") {
+    } else if (A_priorkey="o") {
         Esc & o::SendInput {7}
-    }else if (A_priorkey="p") {
+    } else if (A_priorkey="p") {
         Esc & p::SendInput {8}
-    }else if (A_priorkey="[") {
+    } else if (A_priorkey="[") {
         Esc & [::SendInput {9}
     }
 Return
@@ -58,13 +60,17 @@ Return
 ; LShift & Space::Send {VK19SC1F1}{Tab}
 ; Return
 
-; Tab::SendInput {Tab}
-; return
-
-RShift & LAlt::Send {VK19SC1F1}
-Return
-LAlt & RShift::Send {VK19SC1F1}
+Tab::SendInput {Tab}
 return
+
+^Space::Send {VK19SC1F1}
+Return
+;LShift & Space::Send {VK19SC1F1}
+return
+Tab & Space::Send {VK19SC1F1}
+return
+
+!Tab::Send !{Tab}
 
 ; Control + Space = 영어
 ;^Space::SendInput {vk15sc138}
@@ -74,18 +80,18 @@ RWin::MouseClick, Right
 Return
 
 ; F번호들
-!1::SendInput {F1}
-!2::SendInput {F2}
-!3::SendInput {F3}
-!4::SendInput {F4}
-!5::SendInput {F5}
-!6::SendInput {F6}
-!7::SendInput {F7}
-!8::SendInput {F8}
-!9::SendInput {F9}
-!0::SendInput {F10}
-!-::SendInput {F11}
-!=::SendInput {F12}
+LWin & 1::SendInput {F1}
+LWin & 2::SendInput {F2}
+LWin & 3::SendInput {F3}
+LWin & 4::SendInput {F4}
+LWin & 5::SendInput {F5}
+LWin & 6::SendInput {F6}
+LWin & 7::SendInput {F7}
+LWin & 8::SendInput {F8}
+LWin & 9::SendInput {F9}
+LWin & 0::SendInput {F10}
+LWin & -::SendInput {F11}
+LWin & =::SendInput {F12}
 Return
 
 ;ALt + 4 = Alt + F4
@@ -101,7 +107,7 @@ Return
 return
 
 ; caps lock 안씀
-CapsLock::SendInput {}
+CapsLock::SendInput {Tab}
 Return
 
 ; F1::

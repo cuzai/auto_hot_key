@@ -52,7 +52,7 @@ Return
 Esc & RWin::SendInput {.}
 Return
 
-^Space::Send {VK19SC1F1} {Tab}
+Tab & Space::Send {VK19SC1F1} {Tab}
 Return
 
 RWin::MouseClick, Right
@@ -83,3 +83,5 @@ PgDn::SendInput {End}
 Return
 +PgDn::SendInput +{End}
 Return
+
+!Tab::SendInput !{Tab}

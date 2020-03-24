@@ -7,12 +7,6 @@
 Esc & Enter::SendInput {+}
 Return
 
-RButton & 4::SendInput {F4}
-Return
-
-RButton::SendInput {RButton}
-Return
-
 !Space::Winset, Alwaysontop, , A
 Return
 
@@ -52,7 +46,7 @@ Return
 Esc & RWin::SendInput {.}
 Return
 
-Tab & Space::Send {VK19SC1F1} {Tab}
+Tab & Space::Send {VK19SC1F1}
 Return
 
 RWin::MouseClick, Right
@@ -85,3 +79,9 @@ Return
 Return
 
 !Tab::SendInput !{Tab}
+Return
+
+Tab::SendInput {Tab}
+Return
+
++Tab::SendInput +{Tab}

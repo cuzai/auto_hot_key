@@ -4,9 +4,6 @@
 
 ;return
 
-Esc & Enter::SendInput {+}
-Return
-
 !Space::Winset, Alwaysontop, , A
 Return
 
@@ -44,6 +41,12 @@ Esc::
 Return
 
 Esc & RWin::SendInput {.}
+Return
+
+Esc & =::SendInput {+}
+Return
+
+Esc & 8::SendInput {*}
 Return
 
 Tab & Space::Send {VK19SC1F1}
@@ -85,3 +88,7 @@ Tab::SendInput {Tab}
 Return
 
 +Tab::SendInput +{Tab}
+Return
+
+^+::SendInput ^+
+Return

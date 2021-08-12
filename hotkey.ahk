@@ -76,8 +76,11 @@ $Tab::
 return
 $Alt::
     SendInput {Alt}
+return
 $shift::
     SendInput {Shift}
+return
+
 ; 한자 처리
 Tab & Space::
     Send {VK19SC1F1}

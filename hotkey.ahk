@@ -11,7 +11,7 @@ Esc & ,::
 return
 Esc & .::
     Sendinput {2}
-return
+return 
 Esc & /::
     Sendinput {3}
 return
@@ -38,6 +38,12 @@ Esc & vk15::
 return
 Esc & RWin::
     Sendinput {.}
+return
+ESC & =::
+    Sendinput {+}
+return
+ESC & \::
+    SendInput {/}
 return
 
 ; delete, ~, ` 처리

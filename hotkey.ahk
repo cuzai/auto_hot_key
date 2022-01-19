@@ -1,6 +1,6 @@
-﻿F1:: ; KeyHistory 실행 단축키 : h
-KeyHistory
-return
+﻿;F1:: ; KeyHistory 실행 단축키 : h
+;KeyHistory
+;return
 
 ; 숫자 입력
 Esc::
@@ -108,3 +108,7 @@ return
 +Tab::
     SendInput +{Tab}
 return
+
+;ctrl alt del
+^!`::
+    SendInput ^!{delete}

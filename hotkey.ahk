@@ -3,70 +3,67 @@
 ;return
 
 ; 숫자 입력
-Esc::
-    Sendinput {Esc}
-return
 Esc & ,::
-    Sendinput {1}
+    Send, 1
 return
 Esc & .::
-    Sendinput {2}
+    Send, 2
 return 
 Esc & /::
-    Sendinput {3}
+    Send, 3
 return
 Esc & l::
-    Sendinput {4}
+    Send, 4
 return
 Esc & `;::
-    Sendinput {5}
+    Send, 5
 return
 Esc & '::
-    Sendinput {6}
+    Send, 6
 return
 Esc & o::
-    Sendinput {7}
+    Send, 7
 return
 Esc & p::
-    Sendinput {8}
+    Send, 8
 return
 Esc & [::
-    Sendinput {9}
+    Send, 9
 return
 Esc & vk15::
-    Sendinput {0}
+    Send, 0
 return
 Esc & RWin::
-    Sendinput {.}
+    Send, .
 return
 ESC & =::
-    Sendinput {+}
+    Send, +
 return
 ESC & \::
-    SendInput {/}
+    Send, /
 return
 
 ; delete, ~, ` 처리
 $`::
-    Send {del}
+    Send, {Delete}
 return
 $+$esc::
-    SendInput {~}
+    Send, ~
 return
 $del::
-    Send {``}
+    Send, {``}
 return
 
 ; 항상 위에 처리
-!Space::
+$!$Space::
     Winset, Alwaysontop, , A
 return
 
 ; pagup down 처리
-PgDn::
-    SendInput {End}
+$PgDn::
+    Send, {End}
 return
-+PgDn::
+$+$PgDn::
     SendInput +{End}
 return
 PgUp::

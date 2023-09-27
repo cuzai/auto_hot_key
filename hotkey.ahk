@@ -1,32 +1,29 @@
+;F1:: ; KeyHistory 실행 단축키 : h
+;KeyHistory
+;return
+
 ; 숫자 입력
 Esc::
-    Send, {Esc}
+    Send {Esc}
 return
-
 Esc & ,::
     Send, 1
 return
-
 Esc & .::
     Send, 2
 return 
-
 Esc & /::
     Send, 3
 return
-
 Esc & l::
     Send, 4
 return
-
 Esc & `;::
     Send, 5
 return
-
 Esc & '::
     Send, 6
 return
-
 Esc & o::
     Send, 7
 return
@@ -42,92 +39,83 @@ return
 Esc & RWin::
     Send, .
 return
-ESC & n::
-    Send, {+}
+ESC & =::
+    Send, +
 return
-ESC & j::
+ESC & \::
     Send, /
-return
-ESC & m::
-    Send, -
-return
-ESC & h::
-    Send, *
 return
 
 ; delete, ~, ` 처리
 $`::
     Send, {Delete}
 return
-$+$Esc::
-    Send, {~}
+$+$esc::
+    Send, ~
 return
 $del::
     Send, {``}
 return
 
 ; 항상 위에 처리
-!Space::
+LAlt & Space::
     Winset, Alwaysontop, , A
 return
 
 ; pagup down 처리
-PgDn::
+$PgDn::
     Send, {End}
 return
-+PgDn::
-    Send, +{End}
+$+$PgDn::
+    SendInput +{End}
 return
 PgUp::
-    Send, {Home}
+    SendInput {Home}
 return
 +PgUp::
-    Send, +{Home}
+    SendInput +{Home}
 return
-
+ 
 ; Tab 처리
-Tab::
-    Send, {Tab}
+$Tab::
+    SendInput {Tab}
 return
-Alt::
-    Send, {Alt}
+$LAlt::
+    SendInput {LAlt}
 return
-shift::
-    Send, {Shift}
+$shift::
+    SendInput {Shift}
 return
 
 ; 한자 처리
 Tab & Space::
-    Send, {VK19SC1F1}
+    Send {VK19SC1F1}
 return
 ; F키 처리
 Tab & 5::
-   Send, {F5}
+   SendInput {F5}
 return
 Tab & 4::
-    Send, {F4}
+    Send {F4}
 return
 Tab & 2::
-    Send, {F2}
+    Send {F2}
 return
 Tab & 1::
-    Send, {F1}
+    Send {F1}
 return
 ; shift tab 처리
 +Tab::
-    Send, +{Tab}
+    SendInput +{Tab}
 return
 
-;ctrl alt del
+;ctrl & LAlt del
 ^!`::
-    Send, ^!{delete}
+    SendInput ^!{delete}
+
+!Tab::
+    SendInput !{Tab}
 return
 
-;ctrl shift s
-^+s::
-    Send, ^+s
-return
-
-#Tab::
-    Send, #{Tab}
-return
+RAlt::
+    SendInput {vk15sc1F2}
